@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Formulario de Edição</h1>
-<form method="post" enctype="multipart/form-data" th:action="@{/doSalvar}" th:object="${sandalias}">
+<form method="post" enctype="multipart/form-data" th:action="@{/doSalvar}" th:object="${produto}">
   <input type="hidden" th:field="*{id}">
   Imagem: <input type="file" name="image"/></p> <br />
   Marca: <input type="text" th:field="*{marca}"> <br />
