@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina de cadastro</title>
+</head>
+<form method="post" enctype="multipart/form-data" th:action="@{/doSalvar}" th:object="${produto}" >
+
+  Imagem: <input type="file" name="image"/></p>
+  <br />
+
+  Marca: <input type="text" th:field="*{marca}">
+  <p th:if="${#fields.hasErrors('marca')}" th:errors="*{marca}"></p>
+  <br />
+
+  Preco: <input type="text" th:field="*{preco}">
+  <p th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></p>
+  <br />
+
+  Modelo: <input type="text" th:field="*{modelo}">
+  <p th:if="${#fields.hasErrors('modelo')}" th:errors="*{modelo}"></p>
+  <br />
+
+  Tamanho: <input type="text" th:field="*{tamanho}">
+  <p th:if="${#fields.hasErrors('tamanho')}" th:errors="*{tamanho}"></p>
+  <br />
+
+  Cor: <input type="text" th:field="*{cor}">
+  <p th:if="${#fields.hasErrors('cor')}" th:errors="*{cor}"></p>
+  <br />
+  <button type="submit" onclick="funcaoAlert()">Cadastrar</button>
+</form>
+</body>
+<script>
+  function funcaoAlert() {
+    window.alert("Cadastrado com sucesso!");
+  }
+</script>
+</html>

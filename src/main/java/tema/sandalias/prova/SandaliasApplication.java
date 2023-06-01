@@ -20,9 +20,9 @@ public class SandaliasApplication {
 		return args -> {
 
 			List<Usuario> users = Stream.of(
-					new Usuario("", "João", "123.456.789-10", "admin", encoder.encode("admin"), true),
-					new Usuario("", "Maria", "444.456.789-10", "user1", encoder.encode("user1"), true),
-					new Usuario("", "Pedro", "555.456.789-10", "user2", encoder.encode("user2"), true)
+					new Usuario(1, "João", "123.456.789-10", "admin", encoder.encode("admin"), true),
+					new Usuario(2, "Maria", "444.456.789-10", "user1", encoder.encode("user1"), false),
+					new Usuario(3, "Pedro", "555.456.789-10", "user2", encoder.encode("user2"), false)
 			).collect(Collectors.toList());
 
 			for (var e : users) {

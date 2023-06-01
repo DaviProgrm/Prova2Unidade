@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Dados</title>
+</head>
+<body>
+<h1>Formulario de Edição</h1>
+<form method="post" enctype="multipart/form-data" th:action="@{/doSalvar}" th:object="${sandalias}">
+  <input type="hidden" th:field="*{id}">
+  Imagem: <input type="file" name="image"/></p> <br />
+  Marca: <input type="text" th:field="*{marca}"> <br />
+  Modelo: <input type="text" th:field="*{modelo}"> <br/>
+  Preço: <input type="text" th:field="*{preco}"> <br />
+  Tamanho: <input type="text" th:field="*{tamanho}"> <br />
+  Cor: <input type="text" th:field="*{cor}"> <br />
+  <button type="submit" onclick="funcaoAlert()">Salvar</button>
+</form>
+
+</body>
+</html>

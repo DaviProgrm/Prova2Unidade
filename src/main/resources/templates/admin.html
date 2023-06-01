@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandalias</title>
+    <style>
+        .sandalias {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div th:each="lista: ${sandaliasList}" class="sandalias">
+    <img th:src="${lista.photosImagePath}" height="100px" width="200px"/>
+    <div>
+        <p th:text="${lista.marca}">Marca</p>
+        <p th:text="${lista.modelo}">Modelo</p>
+        <p th:text="${lista.preco}">Preço</p>
+        <p th:text="${lista.tamanho}">Tamanho</p>
+        <p th:text="${lista.cor}">Cor</p>
+    </div>
+    <div>
+        <a th:href="@{'editarPage/'+${lista.id}}">Editar</a>
+        <a th:href="@{'deletar/'+${lista.id}}">Deletar</a>
+    </div>
+</div>
+
+<div>
+    <div th:if="${success != null}" class="alert alert-success" style="color: green;">
+        <p th:text="${success}"></p>
+    </div>
+    <div th:if="${error != null}" class="alert alert-danger" style="color: red;">
+        <p th:text="${error}"></p>
+    </div>
+</div>
+
+<div>
+    <h1>Cadastrar Sandálias:</h1>
+    <button type="button" onclick="window.location.href='/cadastrarPage'" class="btn btn-primary">Aqui</button>
+</div>
+
+<div th:replace="/fragments/commons :: footer"></div>
+</body>
+</html>
